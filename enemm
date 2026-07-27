@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição para o Enem 2027</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Lado Esquerdo - Banner Azul */
+        .sidebar {
+            flex: 1;
+            background-color: #92a1f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px;
+            color: #1e2249;
+        }
+
+        .logo-box {
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        /* Pequeno quadrado extra para simular o ícone da imagem */
+        .logo-box::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 25px;
+            height: 25px;
+            background-color: #ffffff;
+            border-radius: 6px;
+        }
+
+        .sidebar h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            max-width: 400px;
+            margin-top: auto;
+        }
+
+        /* Lado Direito - Formulário */
+        .form-container {
+            flex: 1;
+            padding: 60px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a4a4a;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #92a1f9;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Opções de Horário (Simulando botões/inputs de seleção) */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .radio-option {
+            background-color: #e8e8e8;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .radio-option:hover {
+            background-color: #dddddd;
+        }
+
+        /* Botão de Envio */
+        .btn-submit {
+            width: 100%;
+            background-color: #2ece76;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-submit:hover {
+            background-color: #25b364;
+        }
+
+        /* Rodapé sutil abaixo do botão */
+        .footer-text {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        /* Responsividade para telas menores (Celular) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .sidebar {
+                padding: 40px 20px;
+                gap: 40px;
+            }
+            .sidebar h1 {
+                font-size: 2.2rem;
+            }
+            .form-container {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Lado Esquerdo -->
+        <div class="sidebar">
+            <div class="logo-box"></div>
+            <h1>Inscrição para o Enem 2027</h1>
+        </div>
+
+        <!-- Lado Direito -->
+        <div class="form-container">
+            <form onsubmit="event.preventDefault();">
+                
+                <div class="form-group">
+                    <label for="nome">Nome do aluno</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="responsavel">Nome do pai/mãe ou responsável</label>
+                    <input type="text" id="responsavel" name="responsavel">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail do pai/mãe ou responsável</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label>Horário de preferência</label>
+                    <div class="radio-group">
+                        <div class="radio-option">Manhã (8h-11h)</div>
+                        <div class="radio-option">Tarde (12h-15h)</div>
+                        <div class="radio-option">Noite (16h às 19h)</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="topicos">Tópicos que você gostaria de discutir</label>
+                    <textarea id="topicos" name="topicos"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="nova-pergunta">Nova pergunta</label>
+                    <input type="text" id="nova-pergunta" name="nova-pergunta">
+                </div>
+
+                <button type="submit" class="btn-submit">Agendar reunião</button>
+                
+                <p class="footer-text">Não envie senhas por este formulário. Relatar abuso.</p>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
